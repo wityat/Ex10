@@ -1,5 +1,5 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/*.h)
+set(header ${header_path}/MyStack.h ${header_path}/postfix.h)
 set(src postfix.cpp)
 
 
