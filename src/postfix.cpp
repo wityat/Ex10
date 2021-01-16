@@ -5,4 +5,3 @@
 std::string infix2postfix(std::string infix) {
   return infix;
 }
-
