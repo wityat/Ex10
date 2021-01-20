@@ -15,7 +15,7 @@ std::string infix2postfix(std::string infix) {
     };
     std::string postfix;
     MyStack<char> stack(1000);
-    for ( auto ch:infix ) {
+    for ( auto ch : infix ) {
         if (ch == ' ')
             continue;
         if (priority.find(ch) == priority.end()) {
@@ -43,7 +43,7 @@ std::string infix2postfix(std::string infix) {
         postfix += stack.pop();
         postfix += ' ';
     }
-    while (postfix.find(" . ")!=std::string::npos)
+    while (postfix.find(" . ") != std::string::npos)
         postfix.replace(postfix.find(" . "), 3, ".");
     postfix = postfix.substr(0, postfix.size()-1);
     return postfix;
