@@ -15,28 +15,31 @@ std::string infix2postfix(std::string infix) {
     };
     std::string postfix;
     MyStack<char> stack(1000);
-    for (auto ch:infix) {
+    for ( auto ch:infix ) {
         if (ch == ' ')
             continue;
         if (priority.find(ch) == priority.end()) {
             postfix += ch;
             postfix += ' ';
-        } else{
-            if (priority[ch] == 0 || stack.isEmpty() || priority[ch] > priority[stack.get()]) {
+        } else {
+            if (priority[ch] == 0 ||
+                stack.isEmpty() ||
+                priority[ch] > priority[stack.get()]) {
                 stack.push(ch);
             } else {
-                while (!stack.isEmpty() and priority[ch] <= priority[stack.get()]) {
+                while (!stack.isEmpty() &&
+                        priority[ch] <= priority[stack.get()]) {
                     postfix += stack.pop();
                     postfix += ' ';
                 }
                 if (priority[stack.get()] == 0)
                     stack.pop();
-                if(priority[ch] != 1)
+                if (priority[ch] != 1)
                     stack.push(ch);
             }
         }
     }
-    while (!stack.isEmpty()){
+    while (!stack.isEmpty()) {
         postfix += stack.pop();
         postfix += ' ';
     }

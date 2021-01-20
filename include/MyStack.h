@@ -7,7 +7,7 @@
 
 template <class T>
 class MyStack {
-public:
+ public:
     explicit MyStack(int size) {
         this->head = 0;
         this->size = size;
@@ -58,7 +58,7 @@ public:
         return (head == 0);
     }
 
-private:
+ private:
     int head{};
     int size{};
     T* stack;
