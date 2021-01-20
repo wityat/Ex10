@@ -43,6 +43,8 @@ std::string infix2postfix(std::string infix) {
         postfix += stack.pop();
         postfix += ' ';
     }
+    while (postfix.find(" . ")!=std::string::npos)
+        postfix.replace(postfix.find(" . "), 3, ".");
 
     return postfix;
 }
