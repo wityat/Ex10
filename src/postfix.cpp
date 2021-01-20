@@ -45,6 +45,6 @@ std::string infix2postfix(std::string infix) {
     }
     while (postfix.find(" . ")!=std::string::npos)
         postfix.replace(postfix.find(" . "), 3, ".");
-
+    postfix = postfix.substr(0, postfix.size()-1);
     return postfix;
 }
